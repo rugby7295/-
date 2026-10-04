@@ -1,0 +1,13 @@
+# Render の Blueprint 設定。GitHub のリポジトリを接続するだけで、自動で設定されます。
+services:
+  - type: web
+    name: robo-fight
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20

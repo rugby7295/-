@@ -1,0 +1,13 @@
+{
+  "name": "robo-fight",
+  "version": "1.0.0",
+  "description": "ロボ・ファイト 3D — ブラウザで遊ぶ格闘ロボット(シングル+オンラインルーム対戦)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build:single": "node tools/build-single.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": { "ws": "^8.18.0" },
+  "license": "MIT"
+}
