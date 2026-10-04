@@ -1,0 +1,30 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>ロボ・ファイト 3D</title>
+<style>
+:root{--bg:#d8dbd5;--pn:#f1f2ee;--ink:#1c2530;--mu:#5d6873;--ac:#f5b400;--bl:#2f6fdb;--ln:#b9beb6}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1f22;--pn:#252c30;--ink:#eceee9;--mu:#9aa5ae;--ln:#3a444a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:500 15px/1.6 "Zen Kaku Gothic New","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif}
+.w{max-width:1120px;margin:0 auto;padding:14px}
+header{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+h1{font-size:22px;font-weight:900;margin:0;border-left:8px solid var(--ac);padding-left:10px}
+.hd{display:flex;gap:8px;align-items:center}.cash{font-weight:900;font-size:20px;background:var(--ink);color:var(--ac);padding:2px 14px;border-radius:4px}
+.g{display:grid;gap:14px;grid-template-columns:1fr}@media(min-width:900px){.g{grid-template-columns:1.35fr 1fr}}
+canvas{width:100%;height:auto;display:block;border-radius:6px;border:3px solid var(--ink)}
+.pn{background:var(--pn);border:1px solid var(--ln);border-radius:6px;padding:12px}
+.tabs{display:flex;gap:4px;margin-bottom:10px}.tabs button{flex:1;font:inherit;font-weight:900;padding:8px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;border-radius:4px}
+.tabs button.on{background:var(--ink);color:var(--ac)}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--bl);outline-offset:1px}
+.row{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px dashed var(--ln)}.row:last-child{border:0}.row .n{flex:1}
+.b{font:inherit;font-weight:900;border:0;background:var(--ac);color:#1c2530;padding:6px 12px;border-radius:4px;cursor:pointer;white-space:nowrap}
+.b:disabled{opacity:.4;cursor:not-allowed}.b.k{background:var(--ink);color:var(--pn)}.b.s{padding:4px 8px;font-size:13px}
+select,input[type=text]{font:inherit;padding:5px;border:1px solid var(--ink);border-radius:4px;background:var(--pn);color:var(--ink);max-width:100%}
+.sw{width:30px;height:30px;border-radius:50%;border:3px solid transparent;cursor:pointer;padding:0}.sw.on{border-color:var(--ink)}
+.mu{color:var(--mu);font-size:13px}.msg{margin-top:8px;padding:8px 12px;background:var(--ink);color:var(--pn);border-radius:4px;min-height:1.6em}
+h3{margin:12px 0 2px;font-size:14px;font-weight:900}.sm{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:6px}
+.st{background:var(--ink);color:var(--ac);border-radius:4px;padding:6px 10px;font-size:13px;line-height:1.5}
+</style></head><body><div class="w">
+<header><h1>ロボ・ファイト 3D</h1><div class="hd"><span class="mu" id="st"></span><button class="b k" id="snd" aria-label="効果音">🔊</button><button class="b k" id="bgmb" aria-label="BGM">🎵</button><div class="cash" id="cash"></div></div></header>
+<div class="g"><div><canvas id="cv" width="960" height="600"></canvas><div class="msg" id="msg">パーツを組んで、自分だけのロボを作ろう。重いパーツは動きを鈍らせるぞ。</div></div>
+<div class="pn"><div class="tabs" id="tabs"></div><div id="pane"></div></div></div></div>
+<script src="core.js"></script>
+<script src="game.js"></script>
+</body></html>
